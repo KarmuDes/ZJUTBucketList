@@ -1,0 +1,26 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="9dp">
+
+    <CheckBox
+        android:id="@+id/checkBoxTodo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="20dp" />
+
+    <TextView
+        android:id="@+id/textViewCrimeTitle"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:textSize="16sp"
+        android:background="@drawable/rounded_corners"
+        android:text="graduation from zjut"
+        android:backgroundTint="#A3A3A3"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        />
+
+
+</RelativeLayout>
