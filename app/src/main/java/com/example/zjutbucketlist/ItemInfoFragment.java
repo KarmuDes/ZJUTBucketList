@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +26,7 @@ public class ItemInfoFragment extends Fragment {
     private Button saveChanges;
     private Button deleteItem;
     private BucketList bucketList;
+    private TextView home;
     private UUID id;
 
     public static ItemInfoFragment newInstance(UUID id){
@@ -71,6 +73,13 @@ public class ItemInfoFragment extends Fragment {
             date.setMinDate(System.currentTimeMillis()-1000);
         }
 
+        home = (TextView) v.findViewById(R.id.home);
+        home.setOnClickListener(
+                view -> {
+                    Intent goBackHome = new Intent(getContext(), MainActivity.class);
+                    startActivity(goBackHome);
+                }
+        );
         saveChanges.setOnClickListener(
                 view -> {
                     BucketList editeBucketList = new BucketList(title.getText().toString(), description.getText().toString(), getDateFromDatePicker(date));

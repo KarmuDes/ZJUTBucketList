@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,7 +26,7 @@ public class bucketListItemFragment extends Fragment {
     private DatePicker date;
 
     private Button saveButton;
-
+    private TextView home;
     private ArrayList<BucketList> bucketLists;
 
     @Override
@@ -49,7 +50,13 @@ public class bucketListItemFragment extends Fragment {
         saveButton = (Button) v.findViewById(R.id.addButton);
 
 
-
+        home = (TextView) v.findViewById(R.id.home);
+        home.setOnClickListener(
+                view -> {
+                    Intent home = new Intent(getContext(), MainActivity.class);
+                    startActivity(home);
+                }
+        );
         saveButton.setOnClickListener(view->{
             if( !title.getText().toString().matches("")
                 && !description.getText().toString().matches("")) {

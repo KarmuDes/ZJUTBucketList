@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#F89605"
-        android:orientation="horizontal"
-        android:gravity="center"
-        >
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="#F89605"
+            android:orientation="horizontal"
+            android:gravity="center">
         <TextView
+            android:id="@+id/home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableRight="@drawable/baseline_format_list_bulleted_24"
+            android:drawableRight="@drawable/baseline_home_24"
             android:layout_marginRight="15dp"
             />
         <TextView
@@ -65,20 +68,19 @@
         />
 
 
-    <DatePicker
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_marginTop="15dp"
-        android:id="@+id/date"/>
+        <DatePicker
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp" />
 
-    <LinearLayout
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
-        android:gravity="center"
-        >
+        android:gravity="center">
     <Button
         android:id="@+id/savechanges"
         android:layout_width="wrap_content"
@@ -100,3 +102,4 @@
     </LinearLayout>
 
 </LinearLayout>
+</ScrollView>
