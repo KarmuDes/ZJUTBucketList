@@ -21,6 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name="com.example.zjutbucketlist.bucketListItem"> </activity>
+        <activity android:name="com.example.zjutbucketlist.BucketListPagerActivity"></activity>
+        <activity android:name="com.example.zjutbucketlist.SingleFragmentActivity"></activity>
     </application>
 
 </manifest>
