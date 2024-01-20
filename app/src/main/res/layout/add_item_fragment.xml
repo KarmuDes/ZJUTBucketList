@@ -28,7 +28,6 @@
             android:textSize="35dp"
             android:text="ZJUT TODO LIST "
             android:layout_marginLeft="15dp"
-
             />
     </LinearLayout>
 

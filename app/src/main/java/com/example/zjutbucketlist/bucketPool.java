@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.UUID;
 
 public class bucketPool {
@@ -39,15 +40,17 @@ public class bucketPool {
         return null;
     }
 
-    
 
-    public void deleteItem(UUID id)
-    {
-        for (BucketList bucketList: bucketLists){
-            if (bucketList.getUuid().equals(id)){
-                bucketLists.remove(bucketList);
+
+    public void deleteItem(UUID id) {
+        Iterator<BucketList> iterator = bucketLists.iterator();
+        while (iterator.hasNext()) {
+            BucketList bucketList = iterator.next();
+            if (bucketList.getUuid().equals(id)) {
+                iterator.remove(); // Use iterator to safely remove the item
                 return;
             }
         }
     }
+
 }

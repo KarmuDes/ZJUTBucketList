@@ -20,11 +20,8 @@ import java.util.Calendar;
 public class bucketListItemFragment extends Fragment {
 
     private EditText title;
-
     private EditText description;
-
     private DatePicker date;
-
     private Button saveButton;
     private TextView home;
     private ArrayList<BucketList> bucketLists;
@@ -60,7 +57,6 @@ public class bucketListItemFragment extends Fragment {
         saveButton.setOnClickListener(view->{
             if( !title.getText().toString().matches("")
                 && !description.getText().toString().matches("")) {
-
                 BucketList item = new BucketList(title.getText().toString(), description.getText().toString(), getDate(date));
                 bucketLists.add(item);
                 Intent intent = new Intent();
@@ -68,9 +64,6 @@ public class bucketListItemFragment extends Fragment {
                 getActivity().finish();
             }
         });
-
-
-
 
         return v;
     }

@@ -27,7 +27,6 @@ public class ItemInfoFragment extends Fragment {
     private Button deleteItem;
     private BucketList bucketList;
     private TextView home;
-    private UUID id;
 
     public static ItemInfoFragment newInstance(UUID id){
         Bundle  args = new Bundle();
@@ -80,6 +79,7 @@ public class ItemInfoFragment extends Fragment {
                     startActivity(goBackHome);
                 }
         );
+
         saveChanges.setOnClickListener(
                 view -> {
                     BucketList editeBucketList = new BucketList(title.getText().toString(), description.getText().toString(), getDateFromDatePicker(date));
@@ -95,7 +95,7 @@ public class ItemInfoFragment extends Fragment {
         );
 
         deleteItem.setOnClickListener(view -> {
-            bucketPool.getbucketPool(getActivity()).deleteItem(id);
+            bucketPool.getbucketPool(getActivity()).deleteItem(bucketList.getUuid());
             Intent data = new Intent();
             getActivity().setResult(getActivity().RESULT_OK ,data);
             getActivity().finish();
